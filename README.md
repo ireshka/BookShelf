@@ -7,6 +7,8 @@
 
 This app was created as a part of the CodersCamp project (2019, Warsaw group) - fourth project - backend JavaScript, introduction to Node.js.
 
+You can check source repo at [Project Mentor Github Page](https://github.com/dobrzyckahanna/BookStore).
+
 We created an app (with books database) in which you are able to add / edit / delete books as editor (authorization) and add comment and rating after registration and login (authentication).
 
 ## :blue_book: Getting Started
