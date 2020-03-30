@@ -6,6 +6,7 @@
 **Check demo** at :sparkles: [Heroku](https://bookstore-seven.herokuapp.com/) and **source code** at :house: [GitHub project homepage](https://github.com/dobrzyckahanna/BookStore)
 
 This app was created as a part of the CodersCamp project (2019, Warsaw group) - fourth project - backend JavaScript, introduction to Node.js.
+Source repo you can check at [https://github.com/dobrzyckahanna/BookStore](https://github.com/dobrzyckahanna/BookStore) if you want to know how we've collaborate during project.
 
 We created an app (with books database) in which you are able to add / edit / delete books as editor (authorization) and add comment and rating after registration and login (authentication).
 
