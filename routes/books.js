@@ -139,9 +139,15 @@ router.post('/edit/:id', checkAuthenticated, async (req, res) => {
 
 // Add comment and ratings
 router.post('/:id', checkAuthenticated, async (req, res) => {
+  try {
 
-  const { user } = res.locals;
+  const { user, isEditor } = res.locals;
   if (!user) return res.status(401).send('Only logged in users can do that!');
+
+  if (!isEditor) {
+    req.flash('danger', 'Sorry, due to security reasons, now only editors are allowed to comment');
+    return res.status(403).redirect(`/api/books/${req.params.id}`);
+  }
 
   const book = await Book.findById(req.params.id);
   if (!book) return res.status(404).send('The book with the given ID was not found');
@@ -167,6 +173,9 @@ router.post('/:id', checkAuthenticated, async (req, res) => {
   await book.save();
 
   res.redirect('/api/books/'+ book._id);
+  } catch (err) {
+    return res.status(403).send(`Something goes wrong. We'll check this as soon as possible`);
+  }
 });
 
 module.exports = router;
